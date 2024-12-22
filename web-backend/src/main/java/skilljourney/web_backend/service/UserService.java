@@ -1,6 +1,7 @@
 package skilljourney.web_backend.service;
 
 import jakarta.transaction.Transactional;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import skilljourney.web_backend.dao.UserDao;
 import skilljourney.web_backend.models.User;
@@ -10,7 +11,8 @@ import java.util.List;
 @Service
 public class UserService {
 
-    private final UserDao userDao;
+    @Autowired
+    UserDao userDao;
 
     public UserService(UserDao userDao) {
         this.userDao = userDao;
